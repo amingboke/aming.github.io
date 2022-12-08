@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>2 矩阵 | AMing</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="2 矩阵 | AMing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="介绍Linux 的核心原型是 1991 年由托瓦兹(Linus Torvalds)提出Linux核心官网鸟哥官网CPU-Z CentOS 官方网站   核心好比一个机器，将底层硬件连接到一起，并提供各种操控杆（指令），协调每个部分正常运作。操作者控制操控杆，使核心完成各种工作任务。文件是核心、指令、记录等等的实体。 核心（保证正常运行）：启动，核心，systemd，服务，驱动，文件管理系统（硬盘）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0 基本">
+<meta property="og:url" content="http://example.com/2022/12/12/Linux/0%20%E5%9F%BA%E6%9C%AC/index.html">
+<meta property="og:site_name" content="AMing">
+<meta property="og:description" content="介绍Linux 的核心原型是 1991 年由托瓦兹(Linus Torvalds)提出Linux核心官网鸟哥官网CPU-Z CentOS 官方网站   核心好比一个机器，将底层硬件连接到一起，并提供各种操控杆（指令），协调每个部分正常运作。操作者控制操控杆，使核心完成各种工作任务。文件是核心、指令、记录等等的实体。 核心（保证正常运行）：启动，核心，systemd，服务，驱动，文件管理系统（硬盘）">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-12T12:34:31.000Z">
+<meta property="article:modified_time" content="2022-12-08T16:17:15.922Z">
+<meta property="article:author" content="L S M">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/brown-paper.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>L S M</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/amingcode"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:liumingqqmail@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=204344985&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(31)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        工具
+                        <small>(15)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="工具<--->插件">
+                                        
+                                        插件
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->软件">
+                                        
+                                        软件
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->网页">
+                                        
+                                        网页
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->APP">
+                                        
+                                        APP
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->win">
+                                        
+                                        win
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="linux">
+                        
+                        linux
+                        <small>(12)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数学基础">
+                        
+                        数学基础
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="31">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>插件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网页</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>APP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>win</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All linux "
+           href="/2022/12/12/Linux/0%20%E5%9F%BA%E6%9C%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="0 基本">0 基本</span>
+            <span class="post-date" title="2022-12-12 20:34:31">2022/12/12</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/11/Linux/1.1%20%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1.1 目录与文件">1.1 目录与文件</span>
+            <span class="post-date" title="2022-12-11 20:34:31">2022/12/11</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/10/Linux/1.2%20%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1.2 账号管理">1.2 账号管理</span>
+            <span class="post-date" title="2022-12-10 20:34:31">2022/12/10</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/09/Linux/2.1%20%E8%BF%9B%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.1 进程">2.1 进程</span>
+            <span class="post-date" title="2022-12-09 20:34:31">2022/12/09</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/08/Linux/2.2%20bash/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.2 bash">2.2 bash</span>
+            <span class="post-date" title="2022-12-08 20:34:31">2022/12/08</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/07/Linux/2.3%20%E8%84%9A%E6%9C%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.3 脚本">2.3 脚本</span>
+            <span class="post-date" title="2022-12-07 20:34:31">2022/12/07</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/06/Linux/2.4%20%E8%BD%AF%E4%BB%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.4 软件">2.4 软件</span>
+            <span class="post-date" title="2022-12-06 20:34:31">2022/12/06</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/05/Linux/3.1%20%E5%BC%80%E6%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.1 开机">3.1 开机</span>
+            <span class="post-date" title="2022-12-05 20:34:31">2022/12/05</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/04/Linux/3.2%20%E6%A0%B8%E5%BF%83/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.2 核心">3.2 核心</span>
+            <span class="post-date" title="2022-12-04 20:34:31">2022/12/04</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/03/Linux/3.3%20%E6%9C%8D%E5%8A%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.3 服务">2.3 服务</span>
+            <span class="post-date" title="2022-12-03 20:34:31">2022/12/03</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/02/Linux/3.4%20%E9%A9%B1%E5%8A%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.4 驱动">3.4 驱动</span>
+            <span class="post-date" title="2022-12-02 20:34:31">2022/12/02</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/01/Linux/3.5%20%20%E7%A3%81%E7%9B%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.5 磁盘">3.5 磁盘</span>
+            <span class="post-date" title="2022-12-01 20:34:31">2022/12/01</span>
+        </a>
+        
+        
+        <a  class="All 数学基础 "
+           href="/2022/11/30/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/1%20%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1 高等数学">1 高等数学</span>
+            <span class="post-date" title="2022-11-30 20:34:31">2022/11/30</span>
+        </a>
+        
+        
+        <a  class="All 数学基础 "
+           href="/2022/11/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/2%20%E7%9F%A9%E9%98%B5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2 矩阵">2 矩阵</span>
+            <span class="post-date" title="2022-11-29 20:34:31">2022/11/29</span>
+        </a>
+        
+        
+        <a  class="All 数学基础 "
+           href="/2022/11/28/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/3%20%E6%A6%82%E7%8E%87%E8%AE%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3 概率论">3 概率论</span>
+            <span class="post-date" title="2022-11-28 20:34:31">2022/11/28</span>
+        </a>
+        
+        
+        <a  class="All 数学基础 "
+           href="/2022/11/27/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/4%20%E6%A0%B8%E5%87%BD%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="4 核函数">4 核函数</span>
+            <span class="post-date" title="2022-11-27 20:34:31">2022/11/27</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/09/10/%E5%B7%A5%E5%85%B7/%E7%94%B5%E8%84%91%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="电脑必备工具">电脑必备工具</span>
+            <span class="post-date" title="2022-09-10 19:40:08">2022/09/10</span>
+        </a>
+        
+        
+        <a  class="All 工具 APP "
+           href="/2022/09/09/%E5%B7%A5%E5%85%B7/%E6%94%AF%E6%8C%81%E6%8F%92%E4%BB%B6%E7%9A%84%E6%89%8B%E6%9C%BA%E6%B5%8F%E8%A7%88%E5%99%A8/"
+           data-tag="APP"
+           data-author="" >
+            <span class="post-title" title="支持插件的手机浏览器">支持插件的手机浏览器</span>
+            <span class="post-date" title="2022-09-09 14:46:13">2022/09/09</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/09/06/%E5%B7%A5%E5%85%B7/MathType/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="MathType">MathType</span>
+            <span class="post-date" title="2022-09-06 11:56:27">2022/09/06</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/02/%E5%B7%A5%E5%85%B7/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="数据分析">数据分析</span>
+            <span class="post-date" title="2022-09-02 12:01:59">2022/09/02</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/01/%E5%B7%A5%E5%85%B7/%E4%BA%91%E7%9B%98/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="云盘">云盘</span>
+            <span class="post-date" title="2022-09-01 21:37:52">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/01/%E5%B7%A5%E5%85%B7/%E7%94%B5%E5%AD%90%E4%B9%A6%E8%B5%84%E6%BA%90/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="电子书资源">电子书资源</span>
+            <span class="post-date" title="2022-09-01 01:33:36">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/08/30/%E5%B7%A5%E5%85%B7/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="图片处理">图片处理</span>
+            <span class="post-date" title="2022-08-30 13:08:46">2022/08/30</span>
+        </a>
+        
+        
+        <a  class="All 工具 win "
+           href="/2022/08/28/%E5%B7%A5%E5%85%B7/%E6%8F%90%E9%AB%98%E7%94%B5%E8%84%91%E6%80%A7%E8%83%BD/"
+           data-tag="win"
+           data-author="" >
+            <span class="post-title" title="提高电脑性能">提高电脑性能</span>
+            <span class="post-date" title="2022-08-28 23:52:15">2022/08/28</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/08/27/%E5%B7%A5%E5%85%B7/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD%E5%99%A8/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="多线程下载器">多线程下载器</span>
+            <span class="post-date" title="2022-08-27 10:15:35">2022/08/27</span>
+        </a>
+        
+        
+        <a  class="All 工具 win "
+           href="/2022/08/26/%E5%B7%A5%E5%85%B7/windows%E6%BF%80%E6%B4%BB/"
+           data-tag="win"
+           data-author="" >
+            <span class="post-title" title="windows激活">windows激活</span>
+            <span class="post-date" title="2022-08-26 11:57:31">2022/08/26</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/25/%E5%B7%A5%E5%85%B7/%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="文字转语音">文字转语音</span>
+            <span class="post-date" title="2022-08-25 18:14:03">2022/08/25</span>
+        </a>
+        
+        
+        <a  class="All 工具 "
+           href="/2022/08/24/%E5%B7%A5%E5%85%B7/anti-virussoftware/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="杀毒软件">杀毒软件</span>
+            <span class="post-date" title="2022-08-24 18:02:25">2022/08/24</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/08/23/%E5%B7%A5%E5%85%B7/Copyright-freeCollections/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="免版权合集">免版权合集</span>
+            <span class="post-date" title="2022-08-23 02:00:37">2022/08/23</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/21/%E5%B7%A5%E5%85%B7/ScreenShot/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="截图工具">截图工具</span>
+            <span class="post-date" title="2022-08-21 09:58:19">2022/08/21</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/12/%E5%B7%A5%E5%85%B7/SearchbyImage/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="搜索插件">搜索插件</span>
+            <span class="post-date" title="2022-08-12 02:01:09">2022/08/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-数学基础/2 矩阵" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">2 矩阵</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="数学基础">数学基础</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-12-09 01:14:07'>2022-11-29 20:34</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E5%9F%BA%E7%A1%80"><span class="toc-text">矩阵基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="toc-text">特征值和特征向量</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="矩阵基础"><a href="#矩阵基础" class="headerlink" title="矩阵基础"></a>矩阵基础</h3><p><img src="/tu/Pasted%20image%2020221116164309.png"></p>
+<p>两个矩阵行列数相同的时候称为同型矩阵<br>在同型的前提下，并且各个元素相等为相等矩阵</p>
+<p>乘法没有交换律</p>
+<p>矩阵转置<br>$$(A B)^{T}&#x3D;B^{T} A^{T} \Rightarrow\left(A_{1} A_{2} \cdots A_{n}\right)^{T}&#x3D;A_{n}^{T} \cdots A_{2}^{T} A_{1}^{T}$$</p>
+<p>A为n阶方阵，如果存在n阶方阵B，使得：AB&#x3D;BA&#x3D;I（单位阵）<br>记作：$B&#x3D;A^{-1}$</p>
+<p><strong>矩阵的秩</strong><br>$$A&#x3D;\left(\begin{array}{cccc}<br>a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1 n} \<br>a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2 n} \<br>\cdots &amp; \cdots &amp; \cdots &amp; \cdots \<br>a_{s 1} &amp; a_{s 2} &amp; \cdots &amp; a_{s n}<br>\end{array}\right)$$<br>矩阵A的每一行可以看作一个N维向量，$\alpha_{i}&#x3D;\left(a_{i 1}, a_{i 2}, \cdots, a_{i n}\right), i&#x3D;1,2, \cdots, s$<br>$\alpha_{1}, \alpha_{2}, \cdots, \alpha_{s}$ 叫作A的行向量.<br>矩阵A的每一列可以看作一个S维向量：$$\beta_{j}&#x3D;\left(\begin{array}{c}<br>a_{1 j} \<br>a_{2 j} \<br>\vdots \<br>a_{s j}<br>\end{array}\right), j&#x3D;1,2, \cdots, n$$<br>$\beta_{1}, \beta_{2}, \cdots, \beta_{n}$ 叫作A的列向量。</p>
+<p>举例<br>$$A&#x3D;\left(\begin{array}{cccc}<br>1 &amp; 1 &amp; 3 &amp; 1 \<br>0 &amp; 2 &amp; -1 &amp; 4 \<br>0 &amp; 0 &amp; 0 &amp; 5 \<br>0 &amp; 0 &amp; 0 &amp; 0<br>\end{array}\right)$$<br>行向量：<br>$$\begin{array}{l}<br>\alpha_{1}&#x3D;(\mathbf{1}, \mathbf{1}, \mathbf{3}, \mathbf{1}), \alpha_{2}&#x3D;(\mathbf{0}, 2,-\mathbf{1}, \mathbf{4}) \<br>\alpha_{3}&#x3D;(\mathbf{0}, \mathbf{0}, \mathbf{0}, \mathbf{5}), \alpha_{4}&#x3D;(\mathbf{0}, \mathbf{0}, \mathbf{0}, \mathbf{0})<br>\end{array}$$<br>假设存在极大线性无关组（垂直）：<br>$$k_{1} \alpha_{1}+k_{2} \alpha_{2}+k_{3} \alpha_{3}&#x3D;\alpha&#x3D;\mathbf{0}$$<br>将行向量展成每个纬度的向量（横着看是向量，竖着看是向量的每个维度<code>[x,y,z,t]</code> ）<br>$$\left{\begin{array}{l}<br>k_{1}&#x3D;0 \<br>k_{1}+2 k_{2}&#x3D;0 \<br>3 k_{1}-k_{2}&#x3D;0 \<br>k_{1}+4 k_{2}+5 k_{3}&#x3D;0<br>\end{array}\right.$$</p>
+<p>解得：$k_{1}&#x3D;k_{2}&#x3D;k_{3}&#x3D;0$ 即$\alpha_{1}, \alpha_{2}, \alpha_{3}$ 线性无关，且秩为3</p>
+<p>对于列向量同理：$\beta_{3}&#x3D;\frac{7}{2} \beta_{1}-\frac{1}{2} \beta_{2}+0 \beta_{4}$ ，$\beta_{1}, \beta_{2}, \beta_{4}$ 线性无关，且秩为3</p>
+<p>矩阵的行秩&#x3D;列秩</p>
+<blockquote>
+<p>矩阵中最大不相关向量的个数就是秩了。</p>
+</blockquote>
+<p><strong>向量长度</strong><br>n维向量x的长度 $|x|&#x3D;\sqrt{[x, x]}&#x3D;\sqrt{x_{1}^{2}+x_{2}^{2}+\cdots+x_{n}^{2}} \geq 0$<br>单位向量$|x|&#x3D;1$<br>齐次性(不含有2阶及以上阶的项）：$|\lambda x|&#x3D;|\lambda| \cdot|x|$<br>三角不等：$|x+y| \leq|x|+|y|$</p>
+<p><strong>向量正交（垂直）</strong><br>两两正交的非零向量，（线性无关）</p>
+<p><strong>规范正交基</strong><br> n  维向量 $e_{1}, e_{2}, \ldots, e_{r}$ 是向量空间  $V \subset R^{n}$  中的向量, 满足<br>$\checkmark e_{1}, e_{2}, \ldots, e_{r}$  是向量空间  V  中的一个基;<br> $\checkmark e_{1}, e_{2}, \ldots, e_{r}$  两两正交;<br>$\checkmark e_{1}, e_{2}, \ldots, e_{r}$  都是单位向量,<br>则称 $e_{1}, e_{2}, \ldots, e_{r}$ 是  V  的一个规范正交基.<br>$$e_{1}&#x3D;\left(\begin{array}{l}<br>1 \<br>0 \<br>0 \<br>0<br>\end{array}\right), e_{2}&#x3D;\left(\begin{array}{l}<br>0 \<br>1 \<br>0 \<br>0<br>\end{array}\right), e_{3}&#x3D;\left(\begin{array}{l}<br>0 \<br>0 \<br>1 \<br>0<br>\end{array}\right), e_{4}&#x3D;\left(\begin{array}{l}<br>0 \<br>0 \<br>0 \<br>1<br>\end{array}\right)$$<br>$\text { 是 } \boldsymbol{R}^{4} \text { 的一个规范正交基 }$</p>
+<h3 id="特征值和特征向量"><a href="#特征值和特征向量" class="headerlink" title="特征值和特征向量"></a><strong>特征值和特征向量</strong></h3><p>矩阵对向量可以做拉伸也可以做旋转。每个矩阵都有特殊的向量，矩阵作用这个向量只能拉伸和反转，称为特征向量。<br>对于给定矩阵A，寻找一个常数λ和非零向量x，使得向量x被矩阵A作用后，所得的向量Ax与原向量x平行，并且满足Ax&#x3D;λx。</p>
+<p>$$<br>\begin{array}{r}<br>A \vec{v}-\lambda \vec{v}&#x3D;0 \<br>\Rightarrow \vec{v}(A-\lambda I)&#x3D;0<br>\end{array}$$<br>$$A&#x3D;\left[\begin{array}{ll}<br>2 &amp; 3 \<br>2 &amp; 1<br>\end{array}\right]$$<br>假定 $\vec{v}$ 不是空向量，（A-λI）不可逆。方阵是不可逆，它的行列式必须等于零。因此:<br>$$\operatorname{Det}(A-\lambda I)&#x3D;0$$<br>计算特征值<br>$$\operatorname{Det}\left(\begin{array}{cc}<br>2-\lambda &amp; 3 \<br>2 &amp; 1-\lambda<br>\end{array}\right)&#x3D;0$$<br>$$\begin{array}{l}<br>\lambda_{1}&#x3D;\frac{-b-\sqrt{D}}{2 a}&#x3D;\frac{3-5}{2}&#x3D;-1, \<br>\lambda_{2}&#x3D;\frac{-b+\sqrt{D}}{2 a}&#x3D;\frac{3+5}{2}&#x3D;4 .<br>\end{array}$$<br>两个特征值λ1和λ2。需要注意NxN的方阵具有N个特征值，每一个特征值对应一个特征向量，特征向量之间是线性无关的（相互垂直）。</p>
+<p>计算特征向量<br>$$\left[\begin{array}{ll}<br>2 &amp; 3 \<br>2 &amp; 1<br>\end{array}\right]\left[\begin{array}{l}<br>x_{11} \<br>x_{12}<br>\end{array}\right]&#x3D;-1\left[\begin{array}{l}<br>x_{11} \<br>x_{12}<br>\end{array}\right]$$<br>解得  $x_{11}&#x3D;-x_{12} \text {. }$<br>令$x_{11}&#x3D;-1$ ,可得到λ1的特征向量<br>$$\vec{v}_{1}&#x3D;\left[\begin{array}{c}<br>-1 \<br>1<br>\end{array}\right]$$</p>
+<p>同理，得到λ2的特征向量<br>$$\vec{v}_{2}&#x3D;\left[\begin{array}{l}<br>3 \<br>2<br>\end{array}\right] .$$</p>
+<p> <strong>特征值分解</strong><br>给定矩阵 $A_{n∗n}$ 和其 n 个线性无关的特征向量$S:[x1,x2,…,xn]$<br>$$AS&#x3D;A[x1,x2,…,xn]&#x3D;[λ1x1,λ2x2,…,λnxn]&#x3D;[x1,x2,…,xn]Λ&#x3D;SΛ$$<br>其中 Λ 为特征值组成的对角矩阵，S 可逆，得到：<br>$$A&#x3D;SΛS^{−1}$$<br>约束是 A 有 n 线性无关的特征向量，而不是矩阵 A 本身是否满秩，矩阵 A 无论<strong>是否满秩</strong>都有可能有 n 个线性无关的特征向量。</p>
+<p><strong>奇异值分解</strong><br>给定矩阵$A_{m*n}$<br>$$A&#x3D;U \Sigma V^{-1}&#x3D;U \Sigma V^{T}$$<br>将矩阵$A_{m∗n}$分解成了一个m∗m 的正交矩阵 U 。一个 m∗n 对角矩阵 Σ ，一个 n∗n 的正交矩阵 V 的乘积的形式。注意的是，给定的矩阵，奇异值是固定的，但是左右奇异向量则是不定的，因此上式中的正交矩阵 U 和 V 可以有多种形式。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 liumingqqmail@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2021-2022
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

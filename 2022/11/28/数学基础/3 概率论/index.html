@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>3 概率论 | AMing</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="3 概率论 | AMing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="介绍Linux 的核心原型是 1991 年由托瓦兹(Linus Torvalds)提出Linux核心官网鸟哥官网CPU-Z CentOS 官方网站   核心好比一个机器，将底层硬件连接到一起，并提供各种操控杆（指令），协调每个部分正常运作。操作者控制操控杆，使核心完成各种工作任务。文件是核心、指令、记录等等的实体。 核心（保证正常运行）：启动，核心，systemd，服务，驱动，文件管理系统（硬盘）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0 基本">
+<meta property="og:url" content="http://example.com/2022/12/12/Linux/0%20%E5%9F%BA%E6%9C%AC/index.html">
+<meta property="og:site_name" content="AMing">
+<meta property="og:description" content="介绍Linux 的核心原型是 1991 年由托瓦兹(Linus Torvalds)提出Linux核心官网鸟哥官网CPU-Z CentOS 官方网站   核心好比一个机器，将底层硬件连接到一起，并提供各种操控杆（指令），协调每个部分正常运作。操作者控制操控杆，使核心完成各种工作任务。文件是核心、指令、记录等等的实体。 核心（保证正常运行）：启动，核心，systemd，服务，驱动，文件管理系统（硬盘）">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-12T12:34:31.000Z">
+<meta property="article:modified_time" content="2022-12-08T16:17:15.922Z">
+<meta property="article:author" content="L S M">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/brown-paper.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>L S M</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/amingcode"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:liumingqqmail@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=204344985&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(31)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        工具
+                        <small>(15)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="工具<--->插件">
+                                        
+                                        插件
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->软件">
+                                        
+                                        软件
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->网页">
+                                        
+                                        网页
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->APP">
+                                        
+                                        APP
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->win">
+                                        
+                                        win
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="linux">
+                        
+                        linux
+                        <small>(12)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="数学基础">
+                        
+                        数学基础
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="31">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>插件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网页</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>APP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>win</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All linux "
+           href="/2022/12/12/Linux/0%20%E5%9F%BA%E6%9C%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="0 基本">0 基本</span>
+            <span class="post-date" title="2022-12-12 20:34:31">2022/12/12</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/11/Linux/1.1%20%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1.1 目录与文件">1.1 目录与文件</span>
+            <span class="post-date" title="2022-12-11 20:34:31">2022/12/11</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/10/Linux/1.2%20%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1.2 账号管理">1.2 账号管理</span>
+            <span class="post-date" title="2022-12-10 20:34:31">2022/12/10</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/09/Linux/2.1%20%E8%BF%9B%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.1 进程">2.1 进程</span>
+            <span class="post-date" title="2022-12-09 20:34:31">2022/12/09</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/08/Linux/2.2%20bash/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.2 bash">2.2 bash</span>
+            <span class="post-date" title="2022-12-08 20:34:31">2022/12/08</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/07/Linux/2.3%20%E8%84%9A%E6%9C%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.3 脚本">2.3 脚本</span>
+            <span class="post-date" title="2022-12-07 20:34:31">2022/12/07</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/06/Linux/2.4%20%E8%BD%AF%E4%BB%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.4 软件">2.4 软件</span>
+            <span class="post-date" title="2022-12-06 20:34:31">2022/12/06</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/05/Linux/3.1%20%E5%BC%80%E6%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.1 开机">3.1 开机</span>
+            <span class="post-date" title="2022-12-05 20:34:31">2022/12/05</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/04/Linux/3.2%20%E6%A0%B8%E5%BF%83/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.2 核心">3.2 核心</span>
+            <span class="post-date" title="2022-12-04 20:34:31">2022/12/04</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/03/Linux/3.3%20%E6%9C%8D%E5%8A%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.3 服务">2.3 服务</span>
+            <span class="post-date" title="2022-12-03 20:34:31">2022/12/03</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/02/Linux/3.4%20%E9%A9%B1%E5%8A%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.4 驱动">3.4 驱动</span>
+            <span class="post-date" title="2022-12-02 20:34:31">2022/12/02</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/01/Linux/3.5%20%20%E7%A3%81%E7%9B%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.5 磁盘">3.5 磁盘</span>
+            <span class="post-date" title="2022-12-01 20:34:31">2022/12/01</span>
+        </a>
+        
+        
+        <a  class="All 数学基础 "
+           href="/2022/11/30/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/1%20%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1 高等数学">1 高等数学</span>
+            <span class="post-date" title="2022-11-30 20:34:31">2022/11/30</span>
+        </a>
+        
+        
+        <a  class="All 数学基础 "
+           href="/2022/11/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/2%20%E7%9F%A9%E9%98%B5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2 矩阵">2 矩阵</span>
+            <span class="post-date" title="2022-11-29 20:34:31">2022/11/29</span>
+        </a>
+        
+        
+        <a  class="All 数学基础 "
+           href="/2022/11/28/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/3%20%E6%A6%82%E7%8E%87%E8%AE%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3 概率论">3 概率论</span>
+            <span class="post-date" title="2022-11-28 20:34:31">2022/11/28</span>
+        </a>
+        
+        
+        <a  class="All 数学基础 "
+           href="/2022/11/27/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/4%20%E6%A0%B8%E5%87%BD%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="4 核函数">4 核函数</span>
+            <span class="post-date" title="2022-11-27 20:34:31">2022/11/27</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/09/10/%E5%B7%A5%E5%85%B7/%E7%94%B5%E8%84%91%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="电脑必备工具">电脑必备工具</span>
+            <span class="post-date" title="2022-09-10 19:40:08">2022/09/10</span>
+        </a>
+        
+        
+        <a  class="All 工具 APP "
+           href="/2022/09/09/%E5%B7%A5%E5%85%B7/%E6%94%AF%E6%8C%81%E6%8F%92%E4%BB%B6%E7%9A%84%E6%89%8B%E6%9C%BA%E6%B5%8F%E8%A7%88%E5%99%A8/"
+           data-tag="APP"
+           data-author="" >
+            <span class="post-title" title="支持插件的手机浏览器">支持插件的手机浏览器</span>
+            <span class="post-date" title="2022-09-09 14:46:13">2022/09/09</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/09/06/%E5%B7%A5%E5%85%B7/MathType/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="MathType">MathType</span>
+            <span class="post-date" title="2022-09-06 11:56:27">2022/09/06</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/02/%E5%B7%A5%E5%85%B7/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="数据分析">数据分析</span>
+            <span class="post-date" title="2022-09-02 12:01:59">2022/09/02</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/01/%E5%B7%A5%E5%85%B7/%E4%BA%91%E7%9B%98/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="云盘">云盘</span>
+            <span class="post-date" title="2022-09-01 21:37:52">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/01/%E5%B7%A5%E5%85%B7/%E7%94%B5%E5%AD%90%E4%B9%A6%E8%B5%84%E6%BA%90/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="电子书资源">电子书资源</span>
+            <span class="post-date" title="2022-09-01 01:33:36">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/08/30/%E5%B7%A5%E5%85%B7/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="图片处理">图片处理</span>
+            <span class="post-date" title="2022-08-30 13:08:46">2022/08/30</span>
+        </a>
+        
+        
+        <a  class="All 工具 win "
+           href="/2022/08/28/%E5%B7%A5%E5%85%B7/%E6%8F%90%E9%AB%98%E7%94%B5%E8%84%91%E6%80%A7%E8%83%BD/"
+           data-tag="win"
+           data-author="" >
+            <span class="post-title" title="提高电脑性能">提高电脑性能</span>
+            <span class="post-date" title="2022-08-28 23:52:15">2022/08/28</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/08/27/%E5%B7%A5%E5%85%B7/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD%E5%99%A8/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="多线程下载器">多线程下载器</span>
+            <span class="post-date" title="2022-08-27 10:15:35">2022/08/27</span>
+        </a>
+        
+        
+        <a  class="All 工具 win "
+           href="/2022/08/26/%E5%B7%A5%E5%85%B7/windows%E6%BF%80%E6%B4%BB/"
+           data-tag="win"
+           data-author="" >
+            <span class="post-title" title="windows激活">windows激活</span>
+            <span class="post-date" title="2022-08-26 11:57:31">2022/08/26</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/25/%E5%B7%A5%E5%85%B7/%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="文字转语音">文字转语音</span>
+            <span class="post-date" title="2022-08-25 18:14:03">2022/08/25</span>
+        </a>
+        
+        
+        <a  class="All 工具 "
+           href="/2022/08/24/%E5%B7%A5%E5%85%B7/anti-virussoftware/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="杀毒软件">杀毒软件</span>
+            <span class="post-date" title="2022-08-24 18:02:25">2022/08/24</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/08/23/%E5%B7%A5%E5%85%B7/Copyright-freeCollections/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="免版权合集">免版权合集</span>
+            <span class="post-date" title="2022-08-23 02:00:37">2022/08/23</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/21/%E5%B7%A5%E5%85%B7/ScreenShot/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="截图工具">截图工具</span>
+            <span class="post-date" title="2022-08-21 09:58:19">2022/08/21</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/12/%E5%B7%A5%E5%85%B7/SearchbyImage/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="搜索插件">搜索插件</span>
+            <span class="post-date" title="2022-08-12 02:01:09">2022/08/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-数学基础/3 概率论" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">3 概率论</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="数学基础">数学基础</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-12-09 01:14:26'>2022-11-28 20:34</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87"><span class="toc-text">条件概率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E8%AF%95%E9%AA%8C"><span class="toc-text">伯努利试验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="toc-text">二维随机变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B"><span class="toc-text">期望</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%BC%E7%84%B6"><span class="toc-text">似然</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h3><p>因为已经知道事件A必然发生，所以只需在A发生的范围内考虑问题，即现在的样本空间为A。<br>$$P(B \mid A)&#x3D;\frac{n(A B)}{n(A)}$$<br>因为在事件A发生的情况下事件B发生，等价于事件A和事件B同时发生，即AB发生<br>$$P(B \mid A)&#x3D;\frac{n(A B) &#x2F; n(\Omega)}{n(A) &#x2F; n(\Omega)}&#x3D;\frac{P(A B)}{P(A)}$$<br>P(B|A)与P(AB)<br>相同点：事件A，B都发生了<br>不同点：样本空间不同：在P(B|A)中，事件A成为样本空间；在P(AB)中，样本空间仍为$\Omega$ 。</p>
+<p>独立性<br>设  A ， B  为两随机事件，<br>若  $P(B \mid A)&#x3D;P(B)$，即  $P(A B)&#x3D;P(A) \times P(B)$<br>即  $P(A \mid B)&#x3D;P(A)$  时，称  A ， B  相互独立。</p>
+<h3 id="伯努利试验"><a href="#伯努利试验" class="headerlink" title="伯努利试验"></a>伯努利试验</h3><p>重复n次，每次具有独立性，考察每次出现事件的整体概率。<br>如：股子连续抛掷n次，考察六点出现的次数及相应的概率：</p>
+<p>如果每次试验中事件  A  发生的概率为，<br>$p(0&lt;p&lt;1)$</p>
+<p>则在  n  次贝努里试验中事件  A  恰好发生  k  次的概率为</p>
+<p>$P_{n}(k)&#x3D;C_{n}^{k} p^{k} q^{n-k}, k&#x3D;0,1, \cdots, n$</p>
+<p>其中  $q&#x3D;1-p$，C代表了相同样本，不同顺序。</p>
+<p>古典概率指一个事件的概率<br>条件概率指一个事件概率基础上的另一事件的概率<br>伯努利指多个事件概率中共同事件的概率<br>二维随机变量概率指概率矩阵，x为事件，Y为现象，由x,y构成平面的交叉点为概率。</p>
+<h3 id="二维随机变量"><a href="#二维随机变量" class="headerlink" title="二维随机变量"></a>二维随机变量</h3><p><strong>二维随机变量的联合函数</strong><br>F(x,y)表示随机点（X,Y）在以（x,y）为顶点且位于该点左下方无穷矩形内的概率。<br>$$F(x, y)&#x3D;P{(X \leq \boldsymbol{x}) \cap(Y \leq \boldsymbol{y})}$$<br><img src="/tu/Pasted%20image%2020221117192958.png"></p>
+<p><strong>联合分布</strong>函数F(x,y)表示矩形域概率<br>$$\begin{aligned}<br>&amp; P\left(x_{1}&lt;X \leq x_{2}, \quad y_{1}&lt;Y \leq y_{2}\right) \<br>&#x3D;&amp; F\left(x_{2}, y_{2}\right)-F\left(x_{2}, y_{1}\right)-F\left(x_{1}, y_{2}\right)+F\left(x_{1}, y_{1}\right)<br>\end{aligned}$$<br><img src="/tu/Pasted%20image%2020221117193047.png"></p>
+<p><img src="/tu/Pasted%20image%2020221117192712.png"></p>
+<p><strong>二维连续型随机变量</strong><br>$$F(x, y)&#x3D;\int_{-\infty}^{y} \int_{-\infty}^{x} f(u, v) d u d v$$</p>
+<p><strong>边缘分布</strong><br>x方向求和为y的边缘分布<br>y方向求和为x的边缘分布<br>离散型<br>$$\begin{array}{l}<br>P\left{Y&#x3D;y_{j}\right}&#x3D;P\left{X&lt;+\infty, \quad Y&#x3D;y_{j}\right}&#x3D;\sum_{i&#x3D;1}^{\infty} p_{i j} \stackrel{\text { 记为 }}{&#x3D;} p_{\bullet j} j&#x3D;1,2, \cdots \<br>P\left{X&#x3D;x_{i}\right}&#x3D;P\left{X&#x3D;x_{i}, \quad Y&lt;+\infty\right}&#x3D;\sum_{j&#x3D;1}^{\infty} p_{i j} \stackrel{\text { 记为 }}{&#x3D;&#x3D;} p_{i \bullet} i&#x3D;1,2, \cdots<br>\end{array}$$<br>连续型<br>$$\begin{array}{l}<br>f_{X}(x)&#x3D;\int_{-\infty}^{+\infty} f(x, y) d y \<br>f_{Y}(y)&#x3D;\int_{-\infty}^{+\infty} f(x, y) d x<br>\end{array}$$<br><img src="/tu/Pasted%20image%2020221117224934.png"></p>
+<h3 id="期望"><a href="#期望" class="headerlink" title="期望"></a>期望</h3><p>期望反映了随机变量的取值水平<br>若每个事件概率乘以权重系数（次数）后求和收敛，则称其为随机变量X的数学期望。</p>
+<blockquote>
+<p>有点求事件平均次数概率的味道</p>
+</blockquote>
+<p>$$E(X)&#x3D;\sum_{k&#x3D;1}^{\infty} x_{k} p_{k}$$<br>$$E(X)&#x3D;\int_{-\infty}^{+\infty} x f(x) d x$$<br>$$E(Z)&#x3D;E(g(X, Y))&#x3D;\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} g(x, y) f(x, y) d x d y$$<br>属性</p>
+<ol>
+<li>设  C  是常数，则有  E(C)&#x3D;C </li>
+<li>设  X  是一个随机变量，  C  是常数，则有  E(C X)&#x3D;C E(X) </li>
+<li>设  X, Y  是两个随机变量，则有  E(X+Y)&#x3D;E(X)+E(Y)  将上面三项合起来就是:  E(a X+b Y+c)&#x3D;a E(X)+b E(Y)+c </li>
+<li>设  X, Y  是相互独立的随机变量，则有  E(X Y)&#x3D;E(X) E(Y)</li>
+</ol>
+<p><strong>方差</strong><br>期望的分散程度<br>$$D(X)&#x3D;E[X-E(X)]^{2}&#x3D;E\left(X^{2}\right)-[E(X)]^{2}$$<br><strong>大数定理</strong><br>在试验不变的条件下，重复试验多次，随机事件的频率近似于它的概率。</p>
+<p><strong>马尔可夫不等式</strong><br>$$P(X \geq a) \leq \frac{E(X)}{a} \quad X \geq 0, a&gt;0$$<br><strong>切比雪夫不等式</strong><br>$$P{|X-E(X)| \geq \varepsilon} \leq \frac{\sigma^{2}}{\varepsilon^{2}}$$<br>$$P{|X-E(X)|&lt;\varepsilon} \geq 1-\frac{\sigma^{2}}{\varepsilon^{2}}$$<br><img src="/tu/Pasted%20image%2020221117234024.png"><br><strong>中心极限定理</strong><br>不管总体是什么分布，任意一个总体的样本平均值都会围绕在总体的整体平均值周围，并且呈正态分布。</p>
+<p><strong>熵</strong><br>物体内部的混乱程度。<br>$$H(X)&#x3D;-\sum_{x \in X} P(x) \log_{2} P(x)$$<br>log&#x3D;2.303ln</p>
+<h3 id="似然"><a href="#似然" class="headerlink" title="似然"></a>似然</h3><p>根据概率（结果）推测样本（条件）<br>离散型样本：（$p$ 已知 ）<br>$$L(\theta)&#x3D;\prod_{i&#x3D;1}^{n} p\left(x_{i} ; \theta\right)$$<br>连续型样本：<br>$$L(\theta)&#x3D;\prod_{i&#x3D;1}^{n} f\left(x_{i} ; \theta\right)$$</p>
+<p>极大似然估计(找最大的)：<br>$$L\left(x_{1}, x_{2}, \cdots, x_{n} ; \hat{\theta}\right)&#x3D;\max <em>{\theta \in \Theta} L\left(x</em>{1}, x_{2}, \cdots, x_{n} ; \theta\right)$$</p>
+<p>补充：<br>似然问题都是为了解决<strong>最大似然问题</strong>的，也就是<code>在当前观测结果下，估计参数最有可能的值</code>。<br>$$\arg \max _{\theta} \mathrm{L}&#x3D;\theta^{2}, \text { where } \theta \in[0,1]$$<br>当 $\theta$&#x3D;1时，L可以取到最大值。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 liumingqqmail@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2021-2022
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

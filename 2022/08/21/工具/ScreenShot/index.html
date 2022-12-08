@@ -114,7 +114,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(27)</small>
+                <small>(31)</small>
             
         </div>
     </li>
@@ -222,6 +222,20 @@
     
         
             
+                <li>
+                    <div data-rel="数学基础">
+                        
+                        数学基础
+                        <small>(4)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
         
     
         
@@ -242,7 +256,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="27">
+<input type="hidden" id="yelog_site_posts_number" value="31">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -419,6 +433,42 @@
            data-author="" >
             <span class="post-title" title="3.5 磁盘">3.5 磁盘</span>
             <span class="post-date" title="2022-12-01 20:34:31">2022/12/01</span>
+        </a>
+        
+        
+        <a  class="All 数学基础 "
+           href="/2022/11/30/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/1%20%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1 高等数学">1 高等数学</span>
+            <span class="post-date" title="2022-11-30 20:34:31">2022/11/30</span>
+        </a>
+        
+        
+        <a  class="All 数学基础 "
+           href="/2022/11/29/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/2%20%E7%9F%A9%E9%98%B5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2 矩阵">2 矩阵</span>
+            <span class="post-date" title="2022-11-29 20:34:31">2022/11/29</span>
+        </a>
+        
+        
+        <a  class="All 数学基础 "
+           href="/2022/11/28/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/3%20%E6%A6%82%E7%8E%87%E8%AE%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3 概率论">3 概率论</span>
+            <span class="post-date" title="2022-11-28 20:34:31">2022/11/28</span>
+        </a>
+        
+        
+        <a  class="All 数学基础 "
+           href="/2022/11/27/%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/4%20%E6%A0%B8%E5%87%BD%E6%95%B0/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="4 核函数">4 核函数</span>
+            <span class="post-date" title="2022-11-27 20:34:31">2022/11/27</span>
         </a>
         
         
@@ -717,6 +767,46 @@
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 
