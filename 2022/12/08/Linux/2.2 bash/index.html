@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>2.2 bash | AMing</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="2.2 bash | AMing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="介绍Linux 的核心原型是 1991 年由托瓦兹(Linus Torvalds)提出Linux核心官网鸟哥官网CPU-Z CentOS 官方网站   核心好比一个机器，将底层硬件连接到一起，并提供各种操控杆（指令），协调每个部分正常运作。操作者控制操控杆，使核心完成各种工作任务。文件是核心、指令、记录等等的实体。 核心（保证正常运行）：启动，核心，systemd，服务，驱动，文件管理系统（硬盘）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0 基本">
+<meta property="og:url" content="http://example.com/2022/12/12/Linux/0%20%E5%9F%BA%E6%9C%AC/index.html">
+<meta property="og:site_name" content="AMing">
+<meta property="og:description" content="介绍Linux 的核心原型是 1991 年由托瓦兹(Linus Torvalds)提出Linux核心官网鸟哥官网CPU-Z CentOS 官方网站   核心好比一个机器，将底层硬件连接到一起，并提供各种操控杆（指令），协调每个部分正常运作。操作者控制操控杆，使核心完成各种工作任务。文件是核心、指令、记录等等的实体。 核心（保证正常运行）：启动，核心，systemd，服务，驱动，文件管理系统（硬盘）">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-12T12:34:31.000Z">
+<meta property="article:modified_time" content="2022-12-08T16:17:15.922Z">
+<meta property="article:author" content="L S M">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/brown-paper.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>L S M</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/amingcode"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:liumingqqmail@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=204344985&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(27)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        工具
+                        <small>(15)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="工具<--->插件">
+                                        
+                                        插件
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->软件">
+                                        
+                                        软件
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->网页">
+                                        
+                                        网页
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->APP">
+                                        
+                                        APP
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->win">
+                                        
+                                        win
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="linux">
+                        
+                        linux
+                        <small>(12)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="27">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>插件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网页</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>APP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>win</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All linux "
+           href="/2022/12/12/Linux/0%20%E5%9F%BA%E6%9C%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="0 基本">0 基本</span>
+            <span class="post-date" title="2022-12-12 20:34:31">2022/12/12</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/11/Linux/1.1%20%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1.1 目录与文件">1.1 目录与文件</span>
+            <span class="post-date" title="2022-12-11 20:34:31">2022/12/11</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/10/Linux/1.2%20%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1.2 账号管理">1.2 账号管理</span>
+            <span class="post-date" title="2022-12-10 20:34:31">2022/12/10</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/09/Linux/2.1%20%E8%BF%9B%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.1 进程">2.1 进程</span>
+            <span class="post-date" title="2022-12-09 20:34:31">2022/12/09</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/08/Linux/2.2%20bash/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.2 bash">2.2 bash</span>
+            <span class="post-date" title="2022-12-08 20:34:31">2022/12/08</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/07/Linux/2.3%20%E8%84%9A%E6%9C%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.3 脚本">2.3 脚本</span>
+            <span class="post-date" title="2022-12-07 20:34:31">2022/12/07</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/06/Linux/2.4%20%E8%BD%AF%E4%BB%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.4 软件">2.4 软件</span>
+            <span class="post-date" title="2022-12-06 20:34:31">2022/12/06</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/05/Linux/3.1%20%E5%BC%80%E6%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.1 开机">3.1 开机</span>
+            <span class="post-date" title="2022-12-05 20:34:31">2022/12/05</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/04/Linux/3.2%20%E6%A0%B8%E5%BF%83/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.2 核心">3.2 核心</span>
+            <span class="post-date" title="2022-12-04 20:34:31">2022/12/04</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/03/Linux/3.3%20%E6%9C%8D%E5%8A%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.3 服务">2.3 服务</span>
+            <span class="post-date" title="2022-12-03 20:34:31">2022/12/03</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/02/Linux/3.4%20%E9%A9%B1%E5%8A%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.4 驱动">3.4 驱动</span>
+            <span class="post-date" title="2022-12-02 20:34:31">2022/12/02</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/01/Linux/3.5%20%20%E7%A3%81%E7%9B%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.5 磁盘">3.5 磁盘</span>
+            <span class="post-date" title="2022-12-01 20:34:31">2022/12/01</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/09/10/%E5%B7%A5%E5%85%B7/%E7%94%B5%E8%84%91%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="电脑必备工具">电脑必备工具</span>
+            <span class="post-date" title="2022-09-10 19:40:08">2022/09/10</span>
+        </a>
+        
+        
+        <a  class="All 工具 APP "
+           href="/2022/09/09/%E5%B7%A5%E5%85%B7/%E6%94%AF%E6%8C%81%E6%8F%92%E4%BB%B6%E7%9A%84%E6%89%8B%E6%9C%BA%E6%B5%8F%E8%A7%88%E5%99%A8/"
+           data-tag="APP"
+           data-author="" >
+            <span class="post-title" title="支持插件的手机浏览器">支持插件的手机浏览器</span>
+            <span class="post-date" title="2022-09-09 14:46:13">2022/09/09</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/09/06/%E5%B7%A5%E5%85%B7/MathType/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="MathType">MathType</span>
+            <span class="post-date" title="2022-09-06 11:56:27">2022/09/06</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/02/%E5%B7%A5%E5%85%B7/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="数据分析">数据分析</span>
+            <span class="post-date" title="2022-09-02 12:01:59">2022/09/02</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/01/%E5%B7%A5%E5%85%B7/%E4%BA%91%E7%9B%98/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="云盘">云盘</span>
+            <span class="post-date" title="2022-09-01 21:37:52">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/01/%E5%B7%A5%E5%85%B7/%E7%94%B5%E5%AD%90%E4%B9%A6%E8%B5%84%E6%BA%90/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="电子书资源">电子书资源</span>
+            <span class="post-date" title="2022-09-01 01:33:36">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/08/30/%E5%B7%A5%E5%85%B7/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="图片处理">图片处理</span>
+            <span class="post-date" title="2022-08-30 13:08:46">2022/08/30</span>
+        </a>
+        
+        
+        <a  class="All 工具 win "
+           href="/2022/08/28/%E5%B7%A5%E5%85%B7/%E6%8F%90%E9%AB%98%E7%94%B5%E8%84%91%E6%80%A7%E8%83%BD/"
+           data-tag="win"
+           data-author="" >
+            <span class="post-title" title="提高电脑性能">提高电脑性能</span>
+            <span class="post-date" title="2022-08-28 23:52:15">2022/08/28</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/08/27/%E5%B7%A5%E5%85%B7/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD%E5%99%A8/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="多线程下载器">多线程下载器</span>
+            <span class="post-date" title="2022-08-27 10:15:35">2022/08/27</span>
+        </a>
+        
+        
+        <a  class="All 工具 win "
+           href="/2022/08/26/%E5%B7%A5%E5%85%B7/windows%E6%BF%80%E6%B4%BB/"
+           data-tag="win"
+           data-author="" >
+            <span class="post-title" title="windows激活">windows激活</span>
+            <span class="post-date" title="2022-08-26 11:57:31">2022/08/26</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/25/%E5%B7%A5%E5%85%B7/%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="文字转语音">文字转语音</span>
+            <span class="post-date" title="2022-08-25 18:14:03">2022/08/25</span>
+        </a>
+        
+        
+        <a  class="All 工具 "
+           href="/2022/08/24/%E5%B7%A5%E5%85%B7/anti-virussoftware/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="杀毒软件">杀毒软件</span>
+            <span class="post-date" title="2022-08-24 18:02:25">2022/08/24</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/08/23/%E5%B7%A5%E5%85%B7/Copyright-freeCollections/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="免版权合集">免版权合集</span>
+            <span class="post-date" title="2022-08-23 02:00:37">2022/08/23</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/21/%E5%B7%A5%E5%85%B7/ScreenShot/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="截图工具">截图工具</span>
+            <span class="post-date" title="2022-08-21 09:58:19">2022/08/21</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/12/%E5%B7%A5%E5%85%B7/SearchbyImage/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="搜索插件">搜索插件</span>
+            <span class="post-date" title="2022-08-12 02:01:09">2022/08/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Linux/2.2 bash" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">2.2 bash</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="linux">linux</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-12-09 00:16:59'>2022-12-08 20:34</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%8E%AF%E5%A2%83"><span class="toc-text">操作环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4"><span class="toc-text">指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>shell是空中系统的文字接口<br>第一个流行的shell 是由StevenBourne 发展出来的，为了纪念他所以就称为Bourne shell ，或直接简称为sh ！<br>『Bourne Again SHell (简称<strong>bash</strong>) 』，这个 Shell 是Bourne Shell 的增强版本，也是基准于GNU 的架构下发展！</p>
+<h3 id="操作环境"><a href="#操作环境" class="headerlink" title="操作环境"></a>操作环境</h3><p><strong>指令搜寻顺序</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 以相对/绝对路径执行指令，例如『/bin/ls 』或『./ls 』；</span><br><span class="line">2. 由alias 找到该指令来执行；</span><br><span class="line">3. 由bash 内建的(builtin) 指令来执行；</span><br><span class="line">4. 透过$PATH 这个变量的顺序搜寻到的第一个指令来执行。</span><br></pre></td></tr></table></figure>
+<p><strong>登录的提示信息</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /etc/issue <span class="comment">#终端机接口 (tty1 ~ tty6) 登入的时候</span></span><br><span class="line"><span class="built_in">cat</span> /etc/issue.net <span class="comment">#elnet 这个远程登录程序登入的时候</span></span><br><span class="line"><span class="built_in">cat</span> /etc/motd <span class="comment">#您想要让大家都知道的讯息， 那么可以将讯息加入/etc/motd 里面去！</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>配置文件</strong><br><strong>login shell</strong></p>
+<ol>
+<li>&#x2F;etc&#x2F;profile：<br> 这是系统整体的设定，你最好不要修改这个文件；</li>
+<li><del>&#x2F;.bash_profile 或</del>&#x2F;.bash_login 或~&#x2F;.profile：属于使用者个人设定<br> <code>/etc/profile.d/*.sh</code><br> 这个目录底下的文件规范了bash 操作接口的颜色、语系、ll 与ls 指令的命令别名、vi 的命令别名、which的命令别名等等。会被&#x2F;etc&#x2F;profile调用。<br> <code>/etc/locale.conf</code><br> 会被<code>/etc/profile.d/lang.sh</code>调用，决定bash 预设使用何种语系的重要配置文件！<br> <code>/etc/profile.d/bash_completion.sh</code><br> <code>[tab]</code> 的妙用,命令补齐、档名补齐等等</li>
+</ol>
+<p>login shell 读取的顺序<br>    &#x2F;etc&#x2F;profile<br>    ~&#x2F;.bash_profile<br>         存在不会读其余两个<br>    ~&#x2F;.bash_login<br>        存在不会读其余那个<br>    ~&#x2F;.profile</p>
+<p><strong>non-login shell</strong><br>    取得 non-login shell 时，该bash 配置文件仅会读取~&#x2F;.bashrc<br>    ~&#x2F;.bashrc 会呼叫&#x2F;etc&#x2F;bashrc 及<code>/etc/profile.d/*.sh</code></p>
+<p><strong>source</strong> ：配置文件重新写入当前环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc <span class="comment">#这两个指令是一样的！</span></span><br><span class="line">. ~/.bashrc <span class="comment">#神奇</span></span><br></pre></td></tr></table></figure>
+<p><strong>常见文件</strong><br>&#x2F;etc&#x2F;man_db.conf  规定了下达man 的时候，该去哪里查看数据的路径设定！<br>~&#x2F;.bash_history 历史命令就记录在这里<br>~&#x2F;.bash_logout  当我注销bash 后，系统再帮我做完什么动作后才离开</p>
+<p><strong>通配符</strong><br><code>* </code>：代表『 0 个到无穷多个』任意字符<br><code>?</code> ：代表『一定有一个』任意字符<br><code>[ ]``：[abcd] </code>代表『一定有一个字符， 可能是 a, b,c, d 这四个任何一个』<br><code>[ - ]</code>： <code>[0-9]</code> 代表 0 到 9 之间的所有数字<br><code>[^ ]</code>：<code> [^abc]</code> 代表 一定有一个字符，只要是非 a, b, c 的其他字符就接受的意思。</p>
+<p><strong>特殊字符</strong><br><code># </code>批注符号：在后的数据均不执行<br><code>\</code> 跳脱符号：原成一般字符<br><code>|</code> 管线 (pipe)：分隔两个管线命令的界定(后两节介绍)；<br><code>; </code>连续指令下达分隔符：连续性命令的界定<br><code>~ </code>用户的家目录<br><code>$ </code>取用变数前导符：表示变量<br><code>&amp;</code> 工作控制 (job control)：将指令变成后台工作<br><code>! </code>逻辑运算意义上的『非』 not 的意思！<br><code>/ </code>目录符号：路径分隔的符号<br><code>&gt;, &gt;&gt; </code>数据流重导向：输出导向，分别是『取代』与『累加』<br><code>&lt;, &lt;&lt;</code> 数据流重导向：输入导向 (这两个留待下节介绍)<br><code>&#39; &#39; </code>单引号，不具有变量置换的功能 ($ 变为纯文本)<br><code>&quot; &quot; </code>具有变量置换的功能！ ($ 可保留相关功能)<br>`  `  中间为可以先执行的指令，亦可使用 $( )<br><code>( )</code> 在中间为子 shell 的起始与结束<br><code>&#123; &#125; </code>在中间为命令区块的组合！</p>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#基本</span></span><br><span class="line"><span class="built_in">cat</span> /etc/shells<span class="comment">#系统的包含的shell</span></span><br><span class="line"><span class="built_in">cat</span> /etc/passwd <span class="comment">#登录默认的shell</span></span><br><span class="line"><span class="built_in">cat</span> ~/.bash_history <span class="comment">#历史指令，『上下键』查找</span></span><br><span class="line"><span class="built_in">type</span> -a <span class="built_in">ls</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">#别名</span></span><br><span class="line"><span class="built_in">alias</span> lm=<span class="string">&#x27;ls -al&#x27;</span> <span class="comment">#单引号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#通配符</span></span><br><span class="line"><span class="built_in">ls</span> -l /usr/bin/X* <span class="comment">#多少X开头</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#别名</span></span><br><span class="line"><span class="built_in">alias</span> <span class="comment">#查看别名</span></span><br><span class="line"><span class="built_in">alias</span> lm=<span class="string">&#x27;ls -al | more&#x27;</span> <span class="comment">#别名</span></span><br><span class="line"><span class="built_in">unalias</span> lm <span class="comment">#删除别名</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#历史命令</span></span><br><span class="line"><span class="built_in">history</span> <span class="comment">#历史指令</span></span><br><span class="line"><span class="built_in">history</span> 3 <span class="comment">#最近3条指令</span></span><br><span class="line"><span class="built_in">history</span> -w <span class="comment">#会将历史纪录写入 ~/.bash_history 当中！</span></span><br><span class="line">!66 <span class="comment">#执行第 66 笔指令</span></span><br><span class="line">!! <span class="comment">#执行上一个指令，本例中亦即 !66</span></span><br><span class="line">!al <span class="comment">#执行最近以 al 为开头的指令(上头列出的第 67 个)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#standard output 与standard error output</span></span><br><span class="line">1. 标准输入 (stdin) ：代码为 0 ，使用 &lt; 或 `&lt;&lt;` ；</span><br><span class="line">2. 标准输出 (stdout)：代码为 1 ，使用 &gt; 或 &gt;&gt; ；</span><br><span class="line">3. 标准错误输出(stderr)：代码为 2 ，使用 2&gt; 或 2&gt;&gt; ；</span><br><span class="line">find /home -name .bashrc &gt; list_right 2&gt; list_error<span class="comment">#将 stdout 与 stderr 分存到不同的文件去</span></span><br><span class="line">find /home -name .bashrc 2&gt; /dev/null <span class="comment">#，将错误的数据丢弃，屏幕上显示正确的数据</span></span><br><span class="line"><span class="built_in">cat</span> &gt; catfile <span class="comment">#：利用 cat 指令来建立一个文件，键盘输入文件</span></span><br><span class="line"><span class="built_in">cat</span> &gt; catfile &lt; ~/.bashrc <span class="comment">#复制bashrc</span></span><br><span class="line"><span class="built_in">cat</span> &gt; catfile `&lt;&lt;` <span class="string">&quot;eof&quot;</span> <span class="comment">#输入这关键词，立刻就结束而不需要输入 [ctrl]+d</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#; , &amp;&amp;, ||</span></span><br><span class="line"><span class="built_in">sync</span>; <span class="built_in">sync</span>; shutdown -h now <span class="comment">#同行指令用分号(;) 来隔开</span></span><br><span class="line">cmd1 &amp;&amp; cmd2 </span><br><span class="line">	<span class="comment">#1. 若 cmd1 执行完毕且正确执行($?=0)，则开始执行 cmd2。</span></span><br><span class="line">	<span class="comment">#1. 若 cmd1 执行完毕且为错误 ($?≠0)，则 cmd2 不执行。</span></span><br><span class="line">cmd1 || cmd2</span><br><span class="line">	<span class="comment">#1. 若 cmd1 执行完毕且正确执行($?=0)，则 cmd2 不执行。</span></span><br><span class="line">	<span class="comment">#2. 若 cmd1 执行完毕且为错误 ($?≠0)，则开始执行 cmd2。</span></span><br><span class="line"><span class="built_in">ls</span> /tmp/abc || <span class="built_in">mkdir</span> /tmp/abc &amp;&amp; <span class="built_in">touch</span> /tmp/abc/hehe <span class="comment">#/tmp/abc 是否存在，但就是要建立 /tmp/abc/hehe 文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#管线</span></span><br><span class="line">前面一个指令产生的信息，交给后面的指令处理。</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;PATH&#125;</span> | <span class="built_in">cut</span> -d <span class="string">&#x27;:&#x27;</span> -f 5 <span class="comment">#是以『 : 』作为分隔,第5个的信息</span></span><br><span class="line">last | grep <span class="string">&#x27;root&#x27;</span> <span class="comment">#有出现 root 的那一行就取出来；</span></span><br><span class="line">last | grep -v <span class="string">&#x27;root&#x27;</span> <span class="comment">#没有 root 的就取出</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#排序</span></span><br><span class="line"><span class="built_in">cat</span> /etc/passwd | <span class="built_in">sort</span> <span class="comment">#以第一个字母进行排序</span></span><br><span class="line"><span class="built_in">cat</span> /etc/passwd | <span class="built_in">sort</span> -t <span class="string">&#x27;:&#x27;</span> -k 3 <span class="comment">#以第三栏来排序</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#去除重复</span></span><br><span class="line">last | <span class="built_in">cut</span> -d <span class="string">&#x27; &#x27;</span> -f1 | <span class="built_in">sort</span> | <span class="built_in">uniq</span> <span class="comment">#last 将账号列出，仅取出账号栏，进行排序后仅取出一位</span></span><br><span class="line">last | <span class="built_in">cut</span> -d <span class="string">&#x27; &#x27;</span> -f1 | <span class="built_in">sort</span> | <span class="built_in">uniq</span> -c <span class="comment">#统计每个人的登入总次数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#统计字数行列</span></span><br><span class="line"><span class="built_in">cat</span> /etc/man_db.conf | <span class="built_in">wc</span> <span class="comment">#『行、字数、字符数』</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#分流</span></span><br><span class="line">last | <span class="built_in">tee</span> last.list | <span class="built_in">cut</span> -d <span class="string">&quot; &quot;</span> -f1 <span class="comment">#last 的输出存一份到 last.list 文件中</span></span><br><span class="line"><span class="built_in">ls</span> -l / | <span class="built_in">tee</span> -a ~/homefile | more <span class="comment">#tee 后接的文件会被覆盖，若加上 -a 这个选项则能将讯息累加。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#字符转换命令</span></span><br><span class="line"><span class="comment">#tr</span></span><br><span class="line">last | <span class="built_in">tr</span> <span class="string">&#x27;[a-z]&#x27;</span> <span class="string">&#x27;[A-Z]&#x27;</span><span class="comment">#所有的小写变成大写字符：</span></span><br><span class="line"><span class="built_in">cat</span> /etc/passwd | <span class="built_in">tr</span> -d <span class="string">&#x27;:&#x27;</span> <span class="comment">#将冒号 (:) 删除</span></span><br><span class="line"><span class="comment">#col</span></span><br><span class="line"><span class="built_in">cat</span> /etc/man_db.conf | col -x | <span class="built_in">cat</span> -A | more <span class="comment">#[tab] 按键会被取代成为空格键，</span></span><br><span class="line"><span class="comment">#join</span></span><br><span class="line"><span class="built_in">head</span> -n 3 /etc/passwd /etc/shadow <span class="comment">#两个文件前后排在一起</span></span><br><span class="line"><span class="built_in">join</span> -t <span class="string">&#x27;:&#x27;</span> /etc/passwd /etc/shadow | <span class="built_in">head</span> -n 3 <span class="comment">#第一字段相同者整合成一列，不同部分排在相同行</span></span><br><span class="line"><span class="comment">#paste</span></span><br><span class="line"><span class="built_in">paste</span> /etc/passwd /etc/shadow <span class="comment">#将 /etc/passwd 与 /etc/shadow 同一行贴在一起</span></span><br><span class="line"><span class="built_in">expand</span> [tab] 按键转成空格键啦</span><br><span class="line"><span class="built_in">cat</span> -A <span class="comment">#显示特殊字符</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#文件切分</span></span><br><span class="line"><span class="built_in">cd</span> /tmp; <span class="built_in">split</span> -b 300k /etc/services services <span class="comment">#六百多K的文件，若想要分成 300K 一个文件，以xxxaa, xxxab, xxxac 等方式来建立小文件的</span></span><br><span class="line"><span class="built_in">cat</span> services* &gt;&gt; servicesback <span class="comment">#将上面的三个小文件合成一个文件，档名为 servicesback</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$PATH</span> <span class="comment">#查看，$后为变量 </span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;PATH&#125;</span></span><br><span class="line">myname=VBird  <span class="comment">#自定义变量</span></span><br><span class="line">PATH=<span class="string">&quot;<span class="variable">$PATH</span>&quot;</span>:/home/bin』或『PATH=<span class="variable">$&#123;PATH&#125;</span>:/home/bin<span class="comment">#增加变量</span></span><br><span class="line"><span class="built_in">export</span> PATH <span class="comment">#变量变成环境变量</span></span><br><span class="line"><span class="built_in">unset</span> myname<span class="comment">#取消变量</span></span><br><span class="line">规则：</span><br><span class="line">	『=』紧贴</span><br><span class="line">	不能数字开头</span><br><span class="line">	『<span class="string">&quot;&quot;</span>』一定是字符串</span><br><span class="line">	『<span class="string">&#x27;&#x27;</span>』内引用变量可输出</span><br><span class="line">	通常大写</span><br><span class="line">	()内先执行</span><br><span class="line"></span><br><span class="line"><span class="comment">#环境变量</span></span><br><span class="line"><span class="built_in">env</span> <span class="comment">#所有环境变量</span></span><br><span class="line">l</span><br><span class="line"><span class="built_in">set</span> <span class="comment">#观察所有变量(含环境变量与自定义变量)</span></span><br><span class="line">	PS1=<span class="string">&#x27;[\u@\h \w \A #\#]\$ &#x27;</span> <span class="comment">#显示的内容 [root@VM-8-4-centos ~ 20:14 #52]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#键盘读入</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">&quot;Please keyin your name: &quot;</span> -t 30 named <span class="comment">#提示使用者 30 秒内输入自己的大名，将该输入字符串作为名为 named 的变量内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#变量类型</span></span><br><span class="line"><span class="built_in">declare</span> -i <span class="built_in">sum</span>=100+300+50 <span class="comment">#让变量 sum 进行 100+300+50 的加总结果</span></span><br><span class="line"><span class="built_in">declare</span> -x <span class="built_in">sum</span> <span class="comment">#将 sum 变成环境变量</span></span><br><span class="line"><span class="built_in">declare</span> -r <span class="built_in">sum</span> <span class="comment">#让 sum 变成只读属性，不可更动！</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#数组</span></span><br><span class="line">var[1]=<span class="string">&quot;small min&quot;</span></span><br><span class="line">var[2]=<span class="string">&quot;big min&quot;</span></span><br><span class="line">var[3]=<span class="string">&quot;nice min&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable">$&#123;var[1]&#125;</span>, <span class="variable">$&#123;var[2]&#125;</span>, <span class="variable">$&#123;var[3]&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#限制资源</span></span><br><span class="line"><span class="built_in">ulimit</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#删除</span></span><br><span class="line">path=<span class="variable">$&#123;PATH&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;path#/*local/bin:&#125;</span> <span class="comment">#代表要被删除的部分，由于 # 代表由前面开始删除，所以这里便由开始的 / 写起。</span></span><br></pre></td></tr></table></figure>
+
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 liumingqqmail@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2021-2022
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

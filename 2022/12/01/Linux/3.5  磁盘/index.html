@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>3.5 磁盘 | AMing</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="3.5 磁盘 | AMing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="介绍Linux 的核心原型是 1991 年由托瓦兹(Linus Torvalds)提出Linux核心官网鸟哥官网CPU-Z CentOS 官方网站   核心好比一个机器，将底层硬件连接到一起，并提供各种操控杆（指令），协调每个部分正常运作。操作者控制操控杆，使核心完成各种工作任务。文件是核心、指令、记录等等的实体。 核心（保证正常运行）：启动，核心，systemd，服务，驱动，文件管理系统（硬盘）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0 基本">
+<meta property="og:url" content="http://example.com/2022/12/12/Linux/0%20%E5%9F%BA%E6%9C%AC/index.html">
+<meta property="og:site_name" content="AMing">
+<meta property="og:description" content="介绍Linux 的核心原型是 1991 年由托瓦兹(Linus Torvalds)提出Linux核心官网鸟哥官网CPU-Z CentOS 官方网站   核心好比一个机器，将底层硬件连接到一起，并提供各种操控杆（指令），协调每个部分正常运作。操作者控制操控杆，使核心完成各种工作任务。文件是核心、指令、记录等等的实体。 核心（保证正常运行）：启动，核心，systemd，服务，驱动，文件管理系统（硬盘）">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-12T12:34:31.000Z">
+<meta property="article:modified_time" content="2022-12-08T16:17:15.922Z">
+<meta property="article:author" content="L S M">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/brown-paper.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>L S M</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/amingcode"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:liumingqqmail@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=204344985&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(27)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        工具
+                        <small>(15)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="工具<--->插件">
+                                        
+                                        插件
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->软件">
+                                        
+                                        软件
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->网页">
+                                        
+                                        网页
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->APP">
+                                        
+                                        APP
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->win">
+                                        
+                                        win
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="linux">
+                        
+                        linux
+                        <small>(12)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="27">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>插件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网页</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>APP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>win</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All linux "
+           href="/2022/12/12/Linux/0%20%E5%9F%BA%E6%9C%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="0 基本">0 基本</span>
+            <span class="post-date" title="2022-12-12 20:34:31">2022/12/12</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/11/Linux/1.1%20%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1.1 目录与文件">1.1 目录与文件</span>
+            <span class="post-date" title="2022-12-11 20:34:31">2022/12/11</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/10/Linux/1.2%20%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1.2 账号管理">1.2 账号管理</span>
+            <span class="post-date" title="2022-12-10 20:34:31">2022/12/10</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/09/Linux/2.1%20%E8%BF%9B%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.1 进程">2.1 进程</span>
+            <span class="post-date" title="2022-12-09 20:34:31">2022/12/09</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/08/Linux/2.2%20bash/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.2 bash">2.2 bash</span>
+            <span class="post-date" title="2022-12-08 20:34:31">2022/12/08</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/07/Linux/2.3%20%E8%84%9A%E6%9C%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.3 脚本">2.3 脚本</span>
+            <span class="post-date" title="2022-12-07 20:34:31">2022/12/07</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/06/Linux/2.4%20%E8%BD%AF%E4%BB%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.4 软件">2.4 软件</span>
+            <span class="post-date" title="2022-12-06 20:34:31">2022/12/06</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/05/Linux/3.1%20%E5%BC%80%E6%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.1 开机">3.1 开机</span>
+            <span class="post-date" title="2022-12-05 20:34:31">2022/12/05</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/04/Linux/3.2%20%E6%A0%B8%E5%BF%83/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.2 核心">3.2 核心</span>
+            <span class="post-date" title="2022-12-04 20:34:31">2022/12/04</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/03/Linux/3.3%20%E6%9C%8D%E5%8A%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.3 服务">2.3 服务</span>
+            <span class="post-date" title="2022-12-03 20:34:31">2022/12/03</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/02/Linux/3.4%20%E9%A9%B1%E5%8A%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.4 驱动">3.4 驱动</span>
+            <span class="post-date" title="2022-12-02 20:34:31">2022/12/02</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/01/Linux/3.5%20%20%E7%A3%81%E7%9B%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.5 磁盘">3.5 磁盘</span>
+            <span class="post-date" title="2022-12-01 20:34:31">2022/12/01</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/09/10/%E5%B7%A5%E5%85%B7/%E7%94%B5%E8%84%91%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="电脑必备工具">电脑必备工具</span>
+            <span class="post-date" title="2022-09-10 19:40:08">2022/09/10</span>
+        </a>
+        
+        
+        <a  class="All 工具 APP "
+           href="/2022/09/09/%E5%B7%A5%E5%85%B7/%E6%94%AF%E6%8C%81%E6%8F%92%E4%BB%B6%E7%9A%84%E6%89%8B%E6%9C%BA%E6%B5%8F%E8%A7%88%E5%99%A8/"
+           data-tag="APP"
+           data-author="" >
+            <span class="post-title" title="支持插件的手机浏览器">支持插件的手机浏览器</span>
+            <span class="post-date" title="2022-09-09 14:46:13">2022/09/09</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/09/06/%E5%B7%A5%E5%85%B7/MathType/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="MathType">MathType</span>
+            <span class="post-date" title="2022-09-06 11:56:27">2022/09/06</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/02/%E5%B7%A5%E5%85%B7/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="数据分析">数据分析</span>
+            <span class="post-date" title="2022-09-02 12:01:59">2022/09/02</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/01/%E5%B7%A5%E5%85%B7/%E4%BA%91%E7%9B%98/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="云盘">云盘</span>
+            <span class="post-date" title="2022-09-01 21:37:52">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/01/%E5%B7%A5%E5%85%B7/%E7%94%B5%E5%AD%90%E4%B9%A6%E8%B5%84%E6%BA%90/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="电子书资源">电子书资源</span>
+            <span class="post-date" title="2022-09-01 01:33:36">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/08/30/%E5%B7%A5%E5%85%B7/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="图片处理">图片处理</span>
+            <span class="post-date" title="2022-08-30 13:08:46">2022/08/30</span>
+        </a>
+        
+        
+        <a  class="All 工具 win "
+           href="/2022/08/28/%E5%B7%A5%E5%85%B7/%E6%8F%90%E9%AB%98%E7%94%B5%E8%84%91%E6%80%A7%E8%83%BD/"
+           data-tag="win"
+           data-author="" >
+            <span class="post-title" title="提高电脑性能">提高电脑性能</span>
+            <span class="post-date" title="2022-08-28 23:52:15">2022/08/28</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/08/27/%E5%B7%A5%E5%85%B7/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD%E5%99%A8/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="多线程下载器">多线程下载器</span>
+            <span class="post-date" title="2022-08-27 10:15:35">2022/08/27</span>
+        </a>
+        
+        
+        <a  class="All 工具 win "
+           href="/2022/08/26/%E5%B7%A5%E5%85%B7/windows%E6%BF%80%E6%B4%BB/"
+           data-tag="win"
+           data-author="" >
+            <span class="post-title" title="windows激活">windows激活</span>
+            <span class="post-date" title="2022-08-26 11:57:31">2022/08/26</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/25/%E5%B7%A5%E5%85%B7/%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="文字转语音">文字转语音</span>
+            <span class="post-date" title="2022-08-25 18:14:03">2022/08/25</span>
+        </a>
+        
+        
+        <a  class="All 工具 "
+           href="/2022/08/24/%E5%B7%A5%E5%85%B7/anti-virussoftware/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="杀毒软件">杀毒软件</span>
+            <span class="post-date" title="2022-08-24 18:02:25">2022/08/24</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/08/23/%E5%B7%A5%E5%85%B7/Copyright-freeCollections/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="免版权合集">免版权合集</span>
+            <span class="post-date" title="2022-08-23 02:00:37">2022/08/23</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/21/%E5%B7%A5%E5%85%B7/ScreenShot/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="截图工具">截图工具</span>
+            <span class="post-date" title="2022-08-21 09:58:19">2022/08/21</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/12/%E5%B7%A5%E5%85%B7/SearchbyImage/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="搜索插件">搜索插件</span>
+            <span class="post-date" title="2022-08-12 02:01:09">2022/08/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Linux/3.5  磁盘" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">3.5 磁盘</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="linux">linux</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-12-09 00:16:28'>2022-12-01 20:34</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#用量</span></span><br><span class="line"><span class="built_in">df</span> -h <span class="comment">#显示容量</span></span><br><span class="line"><span class="built_in">df</span> -aT <span class="comment">#所有特殊文件格式及名称都列出来</span></span><br><span class="line"><span class="built_in">df</span> -h /etc <span class="comment">#将 /etc 底下的可用的磁盘容量</span></span><br><span class="line"><span class="built_in">df</span> -ih <span class="comment">#目前各个 partition 当中可用的 inode 数量列出</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">du</span> <span class="comment">#列出目前目录下的所有文件容量</span></span><br><span class="line"><span class="built_in">du</span> -sm /* <span class="comment">#检查根目录底下每个目录所占用的容量</span></span><br><span class="line"><span class="built_in">du</span> -a <span class="comment">#将文件的容量也列出来</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#链接</span></span><br><span class="line"><span class="built_in">ln</span> /etc/crontab .<span class="comment">#建立实体链接的指令，表示同一个文件，两个快捷键</span></span><br><span class="line">	不能跨Filesystem；</span><br><span class="line">	不能<span class="built_in">link</span> 目录。</span><br><span class="line">	只能连接文件</span><br><span class="line"></span><br><span class="line"><span class="built_in">ln</span> -s /etc/crontab crontab2 <span class="comment">#一个源文件，一个快捷键</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">ls</span> -ld /tmp <span class="comment">#目录下的文件数量，inode </span></span><br><span class="line"></span><br><span class="line"><span class="comment">#磁盘列表</span></span><br><span class="line">lsblk <span class="comment">#列出本系统下的所有磁盘与磁盘内的分区信息</span></span><br><span class="line">parted /dev/vda <span class="built_in">print</span> <span class="comment">#列出 /dev/vda 磁盘的相关数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#磁盘分区： gdisk/fdisk</span></span><br><span class="line">『MBR 分区表请使用fdisk 分区， GPT 分区表请使用gdisk 分区！』</span><br><span class="line">?或m查询指令，或根据提示进行分区。</span><br><span class="line">p为查看分区</span><br><span class="line">一般输入n开始增加分区</span><br><span class="line">p为查看分区</span><br><span class="line">w写入分区</span><br><span class="line">lsblk 查询</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除一个分区槽</span></span><br><span class="line">gdisk /dev/vda</span><br><span class="line">p查询</span><br><span class="line">d开始删除分区</span><br><span class="line">p查询</span><br><span class="line">w写入</span><br><span class="line">lsblk 查询</span><br><span class="line"></span><br><span class="line"><span class="comment">#格式化</span></span><br><span class="line">mkfs.xfs /dev/vda4 <span class="comment">#将前一小节分区出来的 /dev/vda4 格式化为 xfs 文件系统</span></span><br><span class="line">mkfs.ext4 /dev/vda5 <span class="comment">#将 /dev/vda5 格式化为 ext4 文件系统</span></span><br><span class="line">blkid /dev/vda4 <span class="comment">## 确定建置好沒</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#挂载与卸载</span></span><br><span class="line">blkid /dev/vda4 <span class="comment">#查看设备</span></span><br><span class="line">mount UUID=<span class="string">&quot;e0a6af55-26e7-4cb7-a515-826a8bd29e90&quot;</span> /data/cdrom <span class="comment">#UUID挂载</span></span><br><span class="line">mount /dev/sr0 /data/cdrom <span class="comment">#文件名挂载</span></span><br><span class="line"><span class="built_in">df</span> /data/cdrom <span class="comment">#查看</span></span><br><span class="line"></span><br><span class="line">umount /dev/vda4 <span class="comment">#用装置文件名来卸除</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#开机启动</span></span><br><span class="line">nano /etc/fstab <span class="comment">#要将 /dev/vda4 每次开机都自动挂载到 /data/xfs</span></span><br><span class="line">UUID=<span class="string">&quot;e0fa7252-b374-4a06-987a-3cb14f415488&quot;</span> /data/xfs xfs defaults 0 0</span><br><span class="line"></span><br><span class="line"><span class="built_in">df</span> <span class="comment">#查看</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#文件系统观察</span></span><br><span class="line">parted /dev/vda <span class="built_in">print</span><span class="comment">#查看vda</span></span><br><span class="line">parted [装置] [指令 [参数]]</span><br><span class="line">指令：</span><br><span class="line">	新增分区：mkpart [primary|logical|extended] [ext4|vfat|xfs] 开始 结束</span><br><span class="line">	显示分区：<span class="built_in">print</span></span><br><span class="line">	删除分区：<span class="built_in">rm</span> [partition]</span><br></pre></td></tr></table></figure>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 liumingqqmail@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2021-2022
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>

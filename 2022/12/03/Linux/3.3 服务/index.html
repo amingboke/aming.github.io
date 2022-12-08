@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>2.3 服务 | AMing</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="2.3 服务 | AMing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="介绍Linux 的核心原型是 1991 年由托瓦兹(Linus Torvalds)提出Linux核心官网鸟哥官网CPU-Z CentOS 官方网站   核心好比一个机器，将底层硬件连接到一起，并提供各种操控杆（指令），协调每个部分正常运作。操作者控制操控杆，使核心完成各种工作任务。文件是核心、指令、记录等等的实体。 核心（保证正常运行）：启动，核心，systemd，服务，驱动，文件管理系统（硬盘）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0 基本">
+<meta property="og:url" content="http://example.com/2022/12/12/Linux/0%20%E5%9F%BA%E6%9C%AC/index.html">
+<meta property="og:site_name" content="AMing">
+<meta property="og:description" content="介绍Linux 的核心原型是 1991 年由托瓦兹(Linus Torvalds)提出Linux核心官网鸟哥官网CPU-Z CentOS 官方网站   核心好比一个机器，将底层硬件连接到一起，并提供各种操控杆（指令），协调每个部分正常运作。操作者控制操控杆，使核心完成各种工作任务。文件是核心、指令、记录等等的实体。 核心（保证正常运行）：启动，核心，systemd，服务，驱动，文件管理系统（硬盘）">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-12T12:34:31.000Z">
+<meta property="article:modified_time" content="2022-12-08T16:17:15.922Z">
+<meta property="article:author" content="L S M">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/brown-paper.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>L S M</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/amingcode"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:liumingqqmail@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=204344985&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(27)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        工具
+                        <small>(15)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="工具<--->插件">
+                                        
+                                        插件
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->软件">
+                                        
+                                        软件
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->网页">
+                                        
+                                        网页
+                                        
+                                            <small>(4
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->APP">
+                                        
+                                        APP
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="工具<--->win">
+                                        
+                                        win
+                                        
+                                            <small>(2
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="linux">
+                        
+                        linux
+                        <small>(12)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="27">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>插件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软件</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>网页</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>APP</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>win</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All linux "
+           href="/2022/12/12/Linux/0%20%E5%9F%BA%E6%9C%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="0 基本">0 基本</span>
+            <span class="post-date" title="2022-12-12 20:34:31">2022/12/12</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/11/Linux/1.1%20%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%96%87%E4%BB%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1.1 目录与文件">1.1 目录与文件</span>
+            <span class="post-date" title="2022-12-11 20:34:31">2022/12/11</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/10/Linux/1.2%20%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1.2 账号管理">1.2 账号管理</span>
+            <span class="post-date" title="2022-12-10 20:34:31">2022/12/10</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/09/Linux/2.1%20%E8%BF%9B%E7%A8%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.1 进程">2.1 进程</span>
+            <span class="post-date" title="2022-12-09 20:34:31">2022/12/09</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/08/Linux/2.2%20bash/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.2 bash">2.2 bash</span>
+            <span class="post-date" title="2022-12-08 20:34:31">2022/12/08</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/07/Linux/2.3%20%E8%84%9A%E6%9C%AC/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.3 脚本">2.3 脚本</span>
+            <span class="post-date" title="2022-12-07 20:34:31">2022/12/07</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/06/Linux/2.4%20%E8%BD%AF%E4%BB%B6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.4 软件">2.4 软件</span>
+            <span class="post-date" title="2022-12-06 20:34:31">2022/12/06</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/05/Linux/3.1%20%E5%BC%80%E6%9C%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.1 开机">3.1 开机</span>
+            <span class="post-date" title="2022-12-05 20:34:31">2022/12/05</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/04/Linux/3.2%20%E6%A0%B8%E5%BF%83/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.2 核心">3.2 核心</span>
+            <span class="post-date" title="2022-12-04 20:34:31">2022/12/04</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/03/Linux/3.3%20%E6%9C%8D%E5%8A%A1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2.3 服务">2.3 服务</span>
+            <span class="post-date" title="2022-12-03 20:34:31">2022/12/03</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/02/Linux/3.4%20%E9%A9%B1%E5%8A%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.4 驱动">3.4 驱动</span>
+            <span class="post-date" title="2022-12-02 20:34:31">2022/12/02</span>
+        </a>
+        
+        
+        <a  class="All linux "
+           href="/2022/12/01/Linux/3.5%20%20%E7%A3%81%E7%9B%98/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.5 磁盘">3.5 磁盘</span>
+            <span class="post-date" title="2022-12-01 20:34:31">2022/12/01</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/09/10/%E5%B7%A5%E5%85%B7/%E7%94%B5%E8%84%91%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="电脑必备工具">电脑必备工具</span>
+            <span class="post-date" title="2022-09-10 19:40:08">2022/09/10</span>
+        </a>
+        
+        
+        <a  class="All 工具 APP "
+           href="/2022/09/09/%E5%B7%A5%E5%85%B7/%E6%94%AF%E6%8C%81%E6%8F%92%E4%BB%B6%E7%9A%84%E6%89%8B%E6%9C%BA%E6%B5%8F%E8%A7%88%E5%99%A8/"
+           data-tag="APP"
+           data-author="" >
+            <span class="post-title" title="支持插件的手机浏览器">支持插件的手机浏览器</span>
+            <span class="post-date" title="2022-09-09 14:46:13">2022/09/09</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/09/06/%E5%B7%A5%E5%85%B7/MathType/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="MathType">MathType</span>
+            <span class="post-date" title="2022-09-06 11:56:27">2022/09/06</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/02/%E5%B7%A5%E5%85%B7/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="数据分析">数据分析</span>
+            <span class="post-date" title="2022-09-02 12:01:59">2022/09/02</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/01/%E5%B7%A5%E5%85%B7/%E4%BA%91%E7%9B%98/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="云盘">云盘</span>
+            <span class="post-date" title="2022-09-01 21:37:52">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/09/01/%E5%B7%A5%E5%85%B7/%E7%94%B5%E5%AD%90%E4%B9%A6%E8%B5%84%E6%BA%90/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="电子书资源">电子书资源</span>
+            <span class="post-date" title="2022-09-01 01:33:36">2022/09/01</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/08/30/%E5%B7%A5%E5%85%B7/%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="图片处理">图片处理</span>
+            <span class="post-date" title="2022-08-30 13:08:46">2022/08/30</span>
+        </a>
+        
+        
+        <a  class="All 工具 win "
+           href="/2022/08/28/%E5%B7%A5%E5%85%B7/%E6%8F%90%E9%AB%98%E7%94%B5%E8%84%91%E6%80%A7%E8%83%BD/"
+           data-tag="win"
+           data-author="" >
+            <span class="post-title" title="提高电脑性能">提高电脑性能</span>
+            <span class="post-date" title="2022-08-28 23:52:15">2022/08/28</span>
+        </a>
+        
+        
+        <a  class="All 工具 软件 "
+           href="/2022/08/27/%E5%B7%A5%E5%85%B7/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%8B%E8%BD%BD%E5%99%A8/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="多线程下载器">多线程下载器</span>
+            <span class="post-date" title="2022-08-27 10:15:35">2022/08/27</span>
+        </a>
+        
+        
+        <a  class="All 工具 win "
+           href="/2022/08/26/%E5%B7%A5%E5%85%B7/windows%E6%BF%80%E6%B4%BB/"
+           data-tag="win"
+           data-author="" >
+            <span class="post-title" title="windows激活">windows激活</span>
+            <span class="post-date" title="2022-08-26 11:57:31">2022/08/26</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/25/%E5%B7%A5%E5%85%B7/%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="文字转语音">文字转语音</span>
+            <span class="post-date" title="2022-08-25 18:14:03">2022/08/25</span>
+        </a>
+        
+        
+        <a  class="All 工具 "
+           href="/2022/08/24/%E5%B7%A5%E5%85%B7/anti-virussoftware/"
+           data-tag="软件"
+           data-author="" >
+            <span class="post-title" title="杀毒软件">杀毒软件</span>
+            <span class="post-date" title="2022-08-24 18:02:25">2022/08/24</span>
+        </a>
+        
+        
+        <a  class="All 工具 网页 "
+           href="/2022/08/23/%E5%B7%A5%E5%85%B7/Copyright-freeCollections/"
+           data-tag="网页"
+           data-author="" >
+            <span class="post-title" title="免版权合集">免版权合集</span>
+            <span class="post-date" title="2022-08-23 02:00:37">2022/08/23</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/21/%E5%B7%A5%E5%85%B7/ScreenShot/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="截图工具">截图工具</span>
+            <span class="post-date" title="2022-08-21 09:58:19">2022/08/21</span>
+        </a>
+        
+        
+        <a  class="All 工具 插件 "
+           href="/2022/08/12/%E5%B7%A5%E5%85%B7/SearchbyImage/"
+           data-tag="插件"
+           data-author="" >
+            <span class="post-title" title="搜索插件">搜索插件</span>
+            <span class="post-date" title="2022-08-12 02:01:09">2022/08/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Linux/3.3 服务" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">2.3 服务</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="linux">linux</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2022-12-09 00:16:38'>2022-12-03 20:34</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#systemctl"><span class="toc-text">systemctl</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E7%9A%84%E6%93%8D%E4%BD%9C%E7%8E%AF%E5%A2%83"><span class="toc-text">不同的操作环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%88%B6%E6%9C%8D%E5%8A%A1"><span class="toc-text">自制服务</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#ip设置</span></span><br><span class="line">systemctl start NetworkManager <span class="comment">#nmtui运行提示NetworkManaer 未运行</span></span><br><span class="line">nmcli connection show <span class="comment">#查看网卡</span></span><br><span class="line">NAME UUID TYPE DEVICE</span><br><span class="line"></span><br><span class="line"><span class="comment"># NAME 就是联机代号，通常与后面的网卡 DEVICE 会一样！</span></span><br><span class="line"><span class="comment"># UUID 这个是特殊的装置识别，保留就好不要理他！</span></span><br><span class="line"><span class="comment"># TYPE 就是网卡的类型，通常就是以太网卡！</span></span><br><span class="line"><span class="comment"># DEVICE 当然就是网卡名称啰！</span></span><br><span class="line"><span class="comment"># 从上面我们会知道有个 eth0 的联机代号，那么来查察这个联机代号的设定为何？</span></span><br><span class="line">nmcli connection show eth0 <span class="comment">#查看eth0</span></span><br><span class="line"><span class="comment">#connection.autoconnect [yes|no] ：是否于开机时启动这个联机，预设通常是 yes 才对！</span></span><br><span class="line"><span class="comment">#ipv4.method [auto|manual] ：自动还是手动设定网络参数的意思</span></span><br><span class="line"><span class="comment">#ipv4.dns [dns_server_ip] ：就是填写 DNS 的 IP 地址～</span></span><br><span class="line"><span class="comment">#ipv4.addresses [IP/Netmask] ：就是 IP 与 netmask 的集合，中间用斜线 / 来隔开～</span></span><br><span class="line"><span class="comment">#ipv4.gateway [gw_ip] ：就是 gateway 的 IP 地址</span></span><br><span class="line"></span><br><span class="line">根据上面的设定项目，我们来设定网络参数</span><br><span class="line">nmcli connection modify eth0 \</span><br><span class="line">&gt; connection.autoconnect <span class="built_in">yes</span> \</span><br><span class="line">&gt; ipv4.method manual \</span><br><span class="line">&gt; ipv4.addresses 172.16.1.1/16 \</span><br><span class="line">&gt; ipv4.gateway 172.16.200.254 \</span><br><span class="line">&gt; ipv4.dns 172.16.200.254</span><br><span class="line"><span class="comment"># 上面只是『修改了配置文件』而已，要实际生效还得要启动 (up) 这个 eth0 联机界面才行喔！</span></span><br><span class="line"></span><br><span class="line">nmcli connection up eth0 <span class="comment">#更新eth0</span></span><br><span class="line">nmcli connection show eth0 <span class="comment">#查看eth0</span></span><br><span class="line"></span><br><span class="line">自动取得 IP 参数</span><br><span class="line">mcli connection modify eth0 \</span><br><span class="line">&gt; connection.autoconnect <span class="built_in">yes</span> \</span><br><span class="line">&gt; ipv4.method auto</span><br><span class="line"></span><br><span class="line">nmcli connection up eth0<span class="comment">#更新eth0</span></span><br><span class="line">nmcli connection show eth0 <span class="comment">#查看eth0</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#系统资源</span></span><br><span class="line">free -m <span class="comment">#显示目前系统的内存容量</span></span><br><span class="line"><span class="built_in">uname</span> -a <span class="comment">#输出系统的基本信息</span></span><br><span class="line"><span class="built_in">uptime</span> <span class="comment">#显示出top 画面的最上面一行</span></span><br><span class="line">netstat -tulnp <span class="comment">#找出目前系统上已在监听的网络联机及其 PID</span></span><br><span class="line">vmstat 1 3 <span class="comment">#统计目前主机 CPU 状态，每秒一次，共计三次！</span></span><br><span class="line">locale -a <span class="comment">#Linux 到底支持了多少的语系</span></span><br><span class="line">locale<span class="comment">#当前环境的语系</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#端口设定</span></span><br><span class="line"><span class="built_in">cat</span> /etc/services</span><br><span class="line"></span><br><span class="line"><span class="comment">#网络服务</span></span><br><span class="line">netstat -tlunp <span class="comment">#观察网络端口</span></span><br><span class="line">systemctl list-units --all | grep avahi-daemon <span class="comment">#根据netstat，然后关闭avahi-daemon服务</span></span><br><span class="line">systemctl stop avahi-daemon.service</span><br><span class="line">systemctl stop avahi-daemon.socket</span><br><span class="line">systemctl <span class="built_in">disable</span> avahi-daemon.service avahi-daemon.socket</span><br><span class="line">netstat -tlunp <span class="comment">#再次查看</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#防火墙</span></span><br><span class="line">firewall-cmd</span><br><span class="line"></span><br><span class="line"><span class="comment">#语系设定</span></span><br><span class="line">localectl <span class="comment">#系统语系</span></span><br><span class="line">locale<span class="comment">#当前这个软件的语系</span></span><br><span class="line">localectl set-locale LANG=en_US.utf8 <span class="comment">#语言设置</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#日期与时间设定</span></span><br><span class="line">timedatectl <span class="comment">#显示目前的时区与时间等信息</span></span><br><span class="line">timedatectl list-timezones | grep -i new<span class="comment">#显示出是否有 New_York 时区？若有，则请将目前的时区更新一下</span></span><br><span class="line">timedatectl set-timezone <span class="string">&quot;America/New_York&quot;</span></span><br><span class="line">timedatectl set-time <span class="string">&quot;2015-09-01 12:02&quot;</span> <span class="comment">#将时间调整到正确的时间点上！</span></span><br><span class="line">ntpdate tock.stdtime.gov.tw<span class="comment">#系统自动网络校</span></span><br><span class="line">hwclock -w <span class="comment">#hwclock 则是将正确的时间写入你的 BIOS 时间记录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#修改主机名</span></span><br><span class="line">hostnamectl <span class="comment">#显示目前的主机名与相关信息</span></span><br><span class="line">hostnamectl set-hostname www.centos.vbird <span class="comment">#尝试修改主机名为 www.centos.vbird 之后再改回来</span></span><br><span class="line"><span class="built_in">cat</span> /etc/hostname <span class="comment">#查看</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#单一服务</span></span><br><span class="line">systemctl [<span class="built_in">command</span>] [unit]</span><br><span class="line">	start ：立刻启动后面接的 unit</span><br><span class="line">	stop ：立刻关闭后面接的 unit</span><br><span class="line">	restart ：立刻关闭后启动后面接的 unit，</span><br><span class="line">	reload ：不关闭后面接的 unit 的情况下，重载配置文件，让设定生效</span><br><span class="line">	<span class="built_in">enable</span> ：设定下次开机时，后面接的 unit 会被启动</span><br><span class="line">	<span class="built_in">disable</span> ：设定下次开机时，后面接的 unit 不会被启动</span><br><span class="line">	status ：目前后面接的这个 unit 的状态，会列出有没有正在执行、开机预设执行否、登录等信息等！</span><br><span class="line">	is-active ：目前有没有正在运作中</span><br><span class="line">	is-enable ：开机时有没有预设要启用这个 unit</span><br><span class="line"><span class="comment">#服务的状态</span></span><br><span class="line">systemctl status atd.service</span><br><span class="line">Active:</span><br><span class="line">	<span class="comment">#active (running)：正有一只或多只程序正在系统中执行的意思，</span></span><br><span class="line">	<span class="comment">#active (exited)：仅执行一次就正常结束的服务，目前并没有任何程序在系统中执行</span></span><br><span class="line">	<span class="comment">#active (waiting)：正在执行当中，不过还再等待其他的事件才能继续处理。</span></span><br><span class="line">	<span class="comment">#inactive：这个服务目前没有运作的意思。</span></span><br><span class="line">Loaded:</span><br><span class="line">	<span class="comment">#enabled：这个daemon 将在开机时被执行</span></span><br><span class="line">	<span class="comment">#disabled：这个daemon 在开机时不会被执行</span></span><br><span class="line">	<span class="comment">#static：这个daemon 不可以自己启动(enable 不可)，不过可能会被其他的enabled 的服务来唤醒(相依属性的服务)</span></span><br><span class="line">	<span class="comment">#mask：这个daemon 无论如何都无法被启动！</span></span><br><span class="line">systemctl <span class="comment"># 列出的项目中，主要的意义是：</span></span><br><span class="line">	<span class="comment"># UNIT ：项目的名称，包括各个 unit 的类别 (看扩展名)</span></span><br><span class="line">	<span class="comment"># LOAD ：开机时是否会被加载，默认 systemctl 显示的是有加载的项目而已喔！</span></span><br><span class="line">	<span class="comment"># ACTIVE ：目前的状态，须与后续的 SUB 搭配！就是我们用 systemctl status 观察时，active 的项目！</span></span><br><span class="line">	<span class="comment"># DESCRIPTION ：详细描述啰</span></span><br><span class="line">	<span class="comment"># cups 比较有趣，因为刚刚被我们玩过，所以 ACTIVE 竟然是 failed 的喔！被玩死了！ ^_^</span></span><br><span class="line">	<span class="comment"># 另外，systemctl 都不加参数，其实预设就是 list-units 的意思！</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#相依性</span></span><br><span class="line">systemctl list-dependencies <span class="comment"># 列出目前的 target 环境下，用到什么特别的 unit</span></span><br><span class="line">systemctl list-dependencies graphical.target  <span class="comment">#graphical.target 又使用了多少的服务</span></span><br></pre></td></tr></table></figure>
+<h3 id="不同的操作环境"><a href="#不同的操作环境" class="headerlink" title="不同的操作环境"></a>不同的操作环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">graphical.target：<span class="comment">#就是文字加上图形界面，包含了的multi-user.target ！</span></span><br><span class="line">multi-user.target：<span class="comment">#纯文本模式！</span></span><br><span class="line">rescue.target：<span class="comment">#在无法使用root 登入的情况下，systemd 在开机时会多加一个额外的暂时系统，与你原本的系统无关。这时你可以取得root 的权限来维护你的系统。但是这是额外系统，因此可能需要动到chroot 的方式来取得你原有的系统喔！</span></span><br><span class="line">emergency.target：<span class="comment">#紧急处理系统的错误，还是需要使用root 登入的情况，在无法使用rescue.target 时，可以尝试使用这种模式！</span></span><br><span class="line">shutdown.target：<span class="comment">#就是关机的流程。</span></span><br><span class="line">getty.target：<span class="comment">#可以设定你需要几个tty 之类的，如果想要降低tty 的项目，可以修改这个东西的配置文件！</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#模式切换</span></span><br><span class="line">systemctl poweroff 系统关机</span><br><span class="line">systemctl reboot 重新启动</span><br><span class="line">systemctl <span class="built_in">suspend</span> 进入暂停模式</span><br><span class="line">systemctl hibernate 进入休眠模式</span><br><span class="line">systemctl rescue 强制进入救援模式</span><br><span class="line">systemctl emergency 强制进入紧急救援模式</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /usr/lib/systemd/system/sshd.service  <span class="comment">#以ssh为例，介绍服务的配置文件</span></span><br><span class="line"></span><br><span class="line">[Unit] <span class="comment"># 这个项目与此 unit 的解释、执行服务相依性有关</span></span><br><span class="line">Description=OpenSSH server daemon <span class="comment">#会输出给管理员看的简易说明</span></span><br><span class="line">After=network.target sshd-keygen.service <span class="comment">#是在哪个 daemon 启动之后才启动的意思！</span></span><br><span class="line">Before= <span class="comment">#是在什么服务启动前最好启动这个服务的意思</span></span><br><span class="line">Requires=<span class="comment">#明确的定义此 unit 需要在哪个 daemon 启动后才能够启动！</span></span><br><span class="line">Wants=sshd-keygen.service <span class="comment">#规范的是这个 unit 之后最好还要启动什么服务比较好的意思</span></span><br><span class="line">Conflicts= <span class="comment">#代表冲突的服务</span></span><br><span class="line"></span><br><span class="line">[Service] <span class="comment"># 这个项目与实际执行的指令参数有关</span></span><br><span class="line">EnvironmentFile=/etc/sysconfig/sshd <span class="comment">#可以指定启动脚本的环境配置文件</span></span><br><span class="line">ExecStart=/usr/sbin/sshd -D <span class="variable">$OPTIONS</span> <span class="comment">#就是实际执行此 daemon 的指令或脚本程序。</span></span><br><span class="line">ExecReload=/bin/kill -HUP <span class="variable">$MAINPID</span> <span class="comment">#</span></span><br><span class="line">ExecStop=<span class="comment">#与 systemctl stop 的执行有关，关闭此服务时所进行的指令。</span></span><br><span class="line">ExecReload=<span class="comment">#systemctl reload 有关的指令行为</span></span><br><span class="line">Restart=on-failure<span class="comment">#Restart=1 时，则当此 daemon 服务终止后，会再次的启动此服务</span></span><br><span class="line">RemainAfterExit=<span class="comment">#RemainAfterExit=1 时，则当这个 daemon 所属的所有程序都终止之后，此服务会再尝试启动</span></span><br><span class="line">TimeoutSec=<span class="comment">#要等多久才进入『强制结束』的状态</span></span><br><span class="line">KillMode=process<span class="comment">#可以是 process, control-group, none 的其中一种，如果是 process 则 daemon 终止时，只会终止主要的程序 (ExecStart 接的后面那串指令)，如果是 control-group 时， 则由此 daemon 所产生的其他 control-group 的程序，也都会被关闭。如果是 none 的话，则没有程序会被关闭喔！</span></span><br><span class="line">RestartSec=42s <span class="comment">#与 Restart 有点相关性，如果这个服务被关闭，然后需要重新启动时，大概要 sleep 多少时间再重新启动的意思。</span></span><br><span class="line"></span><br><span class="line">[Install] <span class="comment"># 这个项目说明此 unit 要挂载哪个 target 底下</span></span><br><span class="line">WantedBy=multi-user.target <span class="comment">#，这个 unit 本身是附挂在哪一个 target unit 底下的！</span></span><br><span class="line">Also=<span class="comment">#！具有相依性的服务可以写在这里呢！</span></span><br><span class="line">Alias=<span class="comment">#进行一个连结的别名的意思</span></span><br></pre></td></tr></table></figure>
+<h3 id="自制服务"><a href="#自制服务" class="headerlink" title="自制服务"></a>自制服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">vim /backups/backup.sh  <span class="comment">#创建可执行脚本</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="built_in">source</span>=<span class="string">&quot;/etc /home /root /var/lib /var/spool/&#123;cron,at,mail&#125;&quot;</span></span><br><span class="line">target=<span class="string">&quot;/backups/backup-system-<span class="subst">$(date +%Y-%m-%d)</span>.tar.gz&quot;</span></span><br><span class="line">[ ! -d /backups ] &amp;&amp; <span class="built_in">mkdir</span> /backups</span><br><span class="line">tar -zcvf <span class="variable">$&#123;target&#125;</span> <span class="variable">$&#123;source&#125;</span> &amp;&gt; /backups/backup.log</span><br><span class="line"></span><br><span class="line">vim /etc/systemd/system/backup.service <span class="comment">#建立一个服务</span></span><br><span class="line">[Unit]</span><br><span class="line">Description=backup my server</span><br><span class="line">Requires=atd.service</span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">ExecStart=/bin/bash -c <span class="string">&quot; echo /backups/backup.sh | at now&quot;</span></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"><span class="comment"># 因为 ExecStart 里面有用到 at 这个指令，因此， atd.service 就是一定要的服务！</span></span><br><span class="line"></span><br><span class="line">systemctl daemon-reload <span class="comment">#重新加载的配置文件</span></span><br><span class="line">systemctl start backup.service <span class="comment">#开启服务</span></span><br><span class="line">systemctl status backup.service <span class="comment">#查看状态</span></span><br></pre></td></tr></table></figure>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 liumingqqmail@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2021-2022
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+    #post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>
